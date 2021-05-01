@@ -13,7 +13,8 @@
 #include <vector>
 
 
-template<class TYPE>
+typedef int TYPE;
+//template<class TYPE>
 class FibRand {
 
 public:

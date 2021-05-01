@@ -8,22 +8,19 @@
 #include "FibRand.h"
 
 
-template<class TYPE>
-FibRand<TYPE>::FibRand() noexcept
+FibRand::FibRand() noexcept
 	:
 	A(1), B(2), C(3), K(5), M(30),
 	buf(K)
 {}
 
-template<class TYPE>
-FibRand<TYPE>::FibRand(int a, int b, int c, unsigned int k, unsigned int m) noexcept
+FibRand::FibRand(int a, int b, int c, unsigned int k, unsigned int m) noexcept
 	:
 	A(a), B(b), C(c), K(k), M(m),
 	buf(K)
 {}
 
-template<class TYPE>
-inline TYPE FibRand<TYPE>::getValue()
+TYPE FibRand::getValue()
 {
 
 	// вычисляемый элемент
@@ -51,8 +48,7 @@ inline TYPE FibRand<TYPE>::getValue()
 
 }
 
-template<class TYPE>
-inline void FibRand<TYPE>::seed(std::vector<TYPE> startValues)
+void FibRand::seed(std::vector<TYPE> startValues)
 {
 
 	auto indexSeed = startValues.begin();
@@ -65,8 +61,7 @@ inline void FibRand<TYPE>::seed(std::vector<TYPE> startValues)
 
 }
 
-template<class TYPE>
-inline void FibRand<TYPE>::seed(std::list<TYPE> startValues)
+void FibRand::seed(std::list<TYPE> startValues)
 {
 	auto indexSeed = startValues.begin();
 
@@ -78,8 +73,7 @@ inline void FibRand<TYPE>::seed(std::list<TYPE> startValues)
 
 }
 
-template<class TYPE>
-inline void FibRand<TYPE>::seed(TYPE n, ...)
+void FibRand::seed(TYPE n, ...)
 {
 
 	TYPE* ptr = &n;

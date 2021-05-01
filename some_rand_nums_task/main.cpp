@@ -33,18 +33,18 @@ int main() {
 	srand(GetTickCount64());
 
 	// объект класса генератора
-	FibRand<int> Rand;
+	FibRand Rand(1,2,3,6,100);
 
-	//// рандомизация генератора рандомными значениями дэфолтного рандомайзера
-	//Rand.seed(5, rand(), rand(), rand(), rand(), rand());
+	// рандомизация генератора рандомными значениями дэфолтного рандомайзера
+	Rand.seed(5, rand(), rand(), rand(), rand(), rand());
 
-	//for (int i = 0; i < 1000; i++) {
-	//	std::cout << Rand.getValue() << "\t";
-	//	if (i % 30 == 0) {
-	//		std::cout << "\n";
-	//	}
-	//}
-	//std::cout << "\n";
+	for (int i = 0; i < 1000; i++) {
+		std::cout << Rand.getValue() << "\t";
+		if (i % 30 == 0) {
+			std::cout << "\n";
+		}
+	}
+	std::cout << "\n";
 
 
 	return 0;
