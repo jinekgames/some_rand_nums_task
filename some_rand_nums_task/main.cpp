@@ -15,20 +15,6 @@
 
 int main() {
 
-	/*
-
-	seed(5, 112, 1242, 443, 4, 95);
-
-	for (int i = 0; i < 1000; i++) {
-		std::cout << getRand() << "\t";
-		if (i % 30 == 0) {
-			std::cout << "\n";
-		}
-	}
-	std::cout << "\n";
-
-	*/
-
 	// рандомизация дэфолтного рнадомайзера
 	srand(GetTickCount64());
 

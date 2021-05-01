@@ -20,18 +20,18 @@ FibRand::FibRand(int a, int b, int c, unsigned int k, unsigned int m) noexcept
 	buf(K)
 {}
 
-TYPE FibRand::getValue()
+int FibRand::getValue()
 {
 
 	// вычисляемый элемент
-	TYPE newValue;
+	int newValue;
 
 	// x(n-1)
 	auto prevElemTag = buf.end();
 	prevElemTag--;
-	TYPE prevElem = *prevElemTag;
+	int prevElem = *prevElemTag;
 	// x(n-k)
-	TYPE lastElem = *(buf.begin());
+	int lastElem = *(buf.begin());
 
 
 	// собственно вычисление
@@ -48,7 +48,7 @@ TYPE FibRand::getValue()
 
 }
 
-void FibRand::seed(std::vector<TYPE> startValues)
+void FibRand::seed(std::vector<int> startValues)
 {
 
 	auto indexSeed = startValues.begin();
@@ -61,7 +61,7 @@ void FibRand::seed(std::vector<TYPE> startValues)
 
 }
 
-void FibRand::seed(std::list<TYPE> startValues)
+void FibRand::seed(std::list<int> startValues)
 {
 	auto indexSeed = startValues.begin();
 
@@ -73,10 +73,10 @@ void FibRand::seed(std::list<TYPE> startValues)
 
 }
 
-void FibRand::seed(TYPE n, ...)
+ void FibRand::seed(int n, ...)
 {
 
-	TYPE* ptr = &n;
+	int* ptr = &n;
 	unsigned int index = 1;
 
 	for (auto& indexList : buf) {
