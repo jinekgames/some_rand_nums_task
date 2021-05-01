@@ -15,6 +15,8 @@
 
 int main() {
 
+	/*
+
 	seed(5, 112, 1242, 443, 4, 95);
 
 	for (int i = 0; i < 1000; i++) {
@@ -24,6 +26,25 @@ int main() {
 		}
 	}
 	std::cout << "\n";
+
+	*/
+
+	// рандомизация дэфолтного рнадомайзера
+	srand(GetTickCount64());
+
+	// объект класса генератора
+	FibRand<int> Rand;
+
+	//// рандомизация генератора рандомными значениями дэфолтного рандомайзера
+	//Rand.seed(5, rand(), rand(), rand(), rand(), rand());
+
+	//for (int i = 0; i < 1000; i++) {
+	//	std::cout << Rand.getValue() << "\t";
+	//	if (i % 30 == 0) {
+	//		std::cout << "\n";
+	//	}
+	//}
+	//std::cout << "\n";
 
 
 	return 0;
