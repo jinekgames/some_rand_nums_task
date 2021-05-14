@@ -8,6 +8,7 @@
 
 
 #include <iostream>
+#include <fstream>
 #include <Windows.h>
 
 #include "FibRand.h"
@@ -64,10 +65,18 @@ int main(int argc, char* argv) {
 	}
 
 
+	// открытие файла для записи чисел тобы потом график сделать красиво (вау)
+	std::ofstream fout("exp_probs.txt",std:: ios::trunc);
+
 	std::cout << "Generator experimental probabilites:\n";
 	for (auto i = 0; i < COUNT_INTERVALS_DEF; i++) {
+
 		expProbs[i] = double(numsInIntrvls[i]) / COUNT_RND_NUMS_DEF;
 		std::cout << expProbs[i] << "\n";
+
+		// а теперь в файл, чтобы сделать из этого график потом
+		fout << expProbs[i] << "\n";
+
 	}
 	std::cout << "\nTheoretical Probability:\n" << 1.0 / COUNT_INTERVALS_DEF << std::endl;
 
