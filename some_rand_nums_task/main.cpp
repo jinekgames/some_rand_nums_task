@@ -26,25 +26,6 @@
 
 int main(int argc, char* argv) {
 
-	unsigned int genMod,
-				countRndNums,
-				countIntrvls;
-
-	// считывание					\
-		модуля генерируемых чисел	\
-		числа генерируемых значений	\
-		и числа интервалов			\
-	   из командной строки (или заполнение дефолтными значениями)
-	if (argc < 4) {
-		genMod = GEN_MOD_DEF;
-		countRndNums = COUNT_RND_NUMS_DEF;
-		countIntrvls = COUNT_INTERVALS_DEF;
-	} else {
-		// да ну в пизду крч
-	}
-
-
-
 	// рандомизация дэфолтного рандомайзера
 	srand(GetTickCount64());
 
