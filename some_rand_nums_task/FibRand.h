@@ -15,9 +15,9 @@
 
 // коэффициенты
 
-int A = 1;
-int B = 2;
-int C = 3;
+int A = 10;
+int B = 20;
+int C = 77;
 unsigned int K = 5u;		// также определяет размер буфера (дб целочисленным)
 unsigned int M = 30u;
 
