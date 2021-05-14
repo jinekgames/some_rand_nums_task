@@ -15,6 +15,10 @@
 #include <vector>
 
 
+
+// вские параметры чтобы быстро тут поменять
+
+
 // максимальное значение для генерируемых чисел
 #define GEN_MOD_DEF 100u
 // число генерируемых значений
@@ -24,6 +28,19 @@
 // длина каждого интервала
 #define INTERVAL_LENTH_DEF GEN_MOD_DEF / COUNT_INTERVALS_DEF
 
+// название файла, куда будут записаны результаты
+#define OUTPUT_FILENAME "exp_probs.txt"
+// параметры инициализации генератора
+#define A_GEN_INIT 10
+#define B_GEN_INIT 2
+#define C_GEN_INIT 6
+#define K_GEN_INIT 5u
+
+
+// параметры закончились \
+начался код
+
+
 
 int main(int argc, char* argv) {
 
@@ -31,7 +48,7 @@ int main(int argc, char* argv) {
 	srand(GetTickCount64());
 
 	// объект класса генератора (можно оставть без параметров, будут заданы значения по умолчанию)
-	FibRand Rand(10,2,6,5,GEN_MOD_DEF);
+	FibRand Rand(A_GEN_INIT, B_GEN_INIT, C_GEN_INIT, K_GEN_INIT, GEN_MOD_DEF);
 
 	// рандомизация генератора рандомными значениями дэфолтного рандомайзера
 	Rand.seed(5, rand(), rand(), rand(), rand(), rand());
@@ -66,7 +83,7 @@ int main(int argc, char* argv) {
 
 
 	// открытие файла для записи чисел тобы потом график сделать красиво (вау)
-	std::ofstream fout("exp_probs.txt",std:: ios::trunc);
+	std::ofstream fout(OUTPUT_FILENAME, std:: ios::trunc);
 
 	std::cout << "Generator experimental probabilites:\n";
 	for (auto i = 0; i < COUNT_INTERVALS_DEF; i++) {
